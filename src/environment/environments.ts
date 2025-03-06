@@ -1,3 +1,3 @@
 export const environments = {
-    baseURL: 'http://localhost:3000/api/v1/champs'
+    baseURL: 'https://backendlol.onrender.com/api/v1/champs'
 };

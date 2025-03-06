@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>¿Está seguro?</h2>
+<mat-dialog-content>
+  <p>Si elimina no podrá recuperar el Campeon</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Gracias</button>
+  <span class="spacer"></span>
+  <button mat-button (click)="onConfirm()">
+    De acuerdo
+  </button>
+</mat-dialog-actions>

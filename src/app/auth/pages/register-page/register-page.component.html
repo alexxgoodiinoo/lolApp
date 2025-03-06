@@ -1,0 +1,63 @@
+<div class="d-flex flex-column w-100">
+    <form [formGroup]="myForm" (ngSubmit)="onRegister()" autocomplete="off" class="w-100">
+      
+      <mat-form-field class="w-100">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          placeholder="alex@gmail.com"
+          formControlName="email"
+        />
+        <span *ngIf="isValidField('email')" class="text-danger">
+          El email es requerido y tiene que ser formato email
+        </span>
+      </mat-form-field>
+  
+      <mat-form-field class="w-100">
+        <mat-label>Username</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Username"
+          formControlName="username"
+        />
+        <span *ngIf="isValidField('username')" class="text-danger">
+            El username es requerido o ya esta registrado
+        </span>
+      </mat-form-field>
+  
+      <mat-form-field class="w-100">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span *ngIf="isValidField('password')" class="text-danger">
+          La password es requerida y tiene que tener más de 8 carácteres
+        </span>
+      </mat-form-field>
+  
+      <mat-form-field class="w-100">
+        <mat-label>Repeat password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Repeat password"
+          formControlName="password2"
+        />
+        <span *ngIf="isValidField('password2')" class="text-danger">
+          La contraseña es requerida o no coincide
+        </span>
+      </mat-form-field>
+      <button type="submit" mat-flat-button color="primary">
+        <mat-icon>save</mat-icon>Ingresar
+      </button>
+      <div class="flex justify-content-end mt-5">
+        <a routerLink="/auth/login">¿Ya tienes cuenta?</a>
+      </div>
+    </form>
+  </div>
+  

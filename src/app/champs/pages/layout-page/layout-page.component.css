@@ -1,0 +1,9 @@
+.fondo {
+  background-image: url("/fondo.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.toolbar {
+  background-color: lightskyblue !important;
+}

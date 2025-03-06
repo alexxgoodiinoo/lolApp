@@ -1,0 +1,62 @@
+<h3 class="text-white pt-5">
+  Agregar Campeon
+</h3>
+
+<mat-divider class="mb-2"></mat-divider>
+<div class="flex justify-center pt-7">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div>
+          <mat-card>
+            <mat-card-content>
+              <form class="grid" [formGroup]="champForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="w-full">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput type="text" required formControlName="name" />
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                  <mat-label>Descripcion</mat-label>
+                  <input matInput type="text" required formControlName="description" />
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                  <mat-label>Region</mat-label>
+                  <input matInput type="text" required formControlName="region" />
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                  <mat-label>Roles</mat-label>
+                  <mat-select required formControlName="role">
+                    <mat-option
+                      *ngFor="let role of roles"
+                      [value]="role.id"
+                    >
+                      {{ role.desc }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                  <mat-label>Imagen</mat-label>
+                  <input matInput type="text" required formControlName="imagen" />
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                  <mat-label>Habilidades</mat-label>
+                  <input matInput type="text" placeholder="pasiva, q, w, e, r" required formControlName="abilities" />
+                </mat-form-field>
+              </form>
+              <div class="flex justify-content-between">
+                <button mat-flat-button (click)="onSubmit()">
+                  <mat-icon>save</mat-icon> Guardar
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="w-132">
+          <mat-card>
+            <img
+              [src]="currentchamp | champImage"
+              alt="imagen del champ"
+              mat-card-image
+            />
+          </mat-card>
+        </div>
+    </div>
+</div>
